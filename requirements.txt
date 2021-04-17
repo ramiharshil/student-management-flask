@@ -1,1 +1,6 @@
-Flask 
+flask 
+flask-marshmallow 
+flask-sqlalchemy 
+marshmallow-sqlalchemy
+pylint-flask
+pylint-flask-sqlalchemy 
