@@ -2,3 +2,4 @@ Flask
 flask_marshmallow 
 Flask_SQLAlchemy 
 marshmallow-sqlalchemy
+greenlet
