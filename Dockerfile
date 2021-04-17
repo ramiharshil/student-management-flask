@@ -8,7 +8,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy the source code
-COPY /app .
+COPY . /app 
 
 EXPOSE 5002
 
