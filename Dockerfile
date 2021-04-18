@@ -1,4 +1,4 @@
-FROM python:3.6.9-lpine3.13
+FROM python:3.6.9-alpine3.13
 
 # Make a directory for application
 WORKDIR /app
