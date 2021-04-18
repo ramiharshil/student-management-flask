@@ -5,7 +5,9 @@ WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install flask
+RUN pip install flask_sqlalchemy
+RUN pip install flask_marshmallow
 
 # Copy the source code
 COPY . . 
