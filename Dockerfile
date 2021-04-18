@@ -1,13 +1,14 @@
-FROM python:3.6.9-alpine3.13
+FROM python:3.6.13-alpine3.13
 
 # Make a directory for application
 WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install flask
-RUN pip install flask_sqlalchemy
-RUN pip install flask_marshmallow
+RUN pip3 install Flask
+RUN pip3 install Flask_marshmallow
+RUN pip3 install SQLAlchemy==0.8.1
+RUN pip3 install Flask-SQLAlchemy
 
 # Copy the source code
 COPY . . 
