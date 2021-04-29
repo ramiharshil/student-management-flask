@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify
+import flask
+from flask import flask, request, jsonify
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
