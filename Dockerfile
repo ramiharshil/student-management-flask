@@ -13,7 +13,7 @@ RUN pip3 install Flask-SQLAlchemy
 # Copy the source code
 COPY . . 
 
-EXPOSE 5001
+EXPOSE 5002
 
 # RUN the application
 CMD ["python","app.py"]
