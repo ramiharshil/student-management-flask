@@ -4,6 +4,7 @@ FROM python:3.6.13-alpine3.13
 WORKDIR /app
 
 # Install dependencies
+COPY requirements.txt .
 RUN pip3 install Flask
 RUN pip3 install Flask_marshmallow
 RUN pip3 install SQLAlchemy
