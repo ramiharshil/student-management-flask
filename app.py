@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -43,7 +43,7 @@ students_schema = StudentSchema(many=True)
 
 
 # Create a student
-@app.route('/student', methods=['POST'])
+@app.route('/addstudent', methods=['POST'])
 def create_student():
   name = request.json['name']
   email = request.json['email']
@@ -59,7 +59,7 @@ def create_student():
   return student_schema.jsonify(new_student)
 
 # Get All Students
-@app.route('/student', methods=['GET'])
+@app.route('/getstudent', methods=['GET'])
 def get_students():
   all_students = Student.query.all()
   result = students_schema.dump(all_students)
@@ -68,13 +68,13 @@ def get_students():
 
 
 # Get Single Products
-@app.route('/student/<id>', methods=['GET'])
+@app.route('/getstudent/<id>', methods=['GET'])
 def get_student(id):
   student = Student.query.get(id)
   return student_schema.jsonify(student)
 
 # Update a Student
-@app.route('/student/<id>', methods=['PUT'])
+@app.route('/updatestudent/<id>', methods=['PUT'])
 def update_student(id):
   student = Student.query.get(id)
 
@@ -96,7 +96,7 @@ def update_student(id):
 
 
 # Delete Student
-@app.route('/student/<id>', methods=['DELETE'])
+@app.route('/dltstudent/<id>', methods=['DELETE'])
 def delete_student(id):
   student = Student.query.get(id)
   db.session.delete(student)
@@ -105,5 +105,5 @@ def delete_student(id):
   return student_schema.jsonify(student)
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0',port=5002)
+    app.run(debug=True, host='0.0.0.0', port=5002)
 
