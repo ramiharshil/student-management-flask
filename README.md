@@ -5,4 +5,4 @@ This repository contains the following documents:
 * app.py : python file containing the code for the APIs
 * db.sqlite : sample sqlite database file for demo
 * requirements.txt : list of all external libraries used
-* Dockerfile : file containing the 'recipe' for the docker image
+* Dockerfile : file containing the  for the docker image
